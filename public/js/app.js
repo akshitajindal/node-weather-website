@@ -1,6 +1,6 @@
 //const { response } = require("express")
 
-console.log('Client side javascript file is loaded!')
+//console.log('Client side javascript file is loaded!')
 
 //we'll be using fetch, which is a browser based api.
 // it can be used in client side javascript, but not in the backend in node.
