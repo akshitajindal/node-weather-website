@@ -8,6 +8,11 @@ const forecast = require('./utils/forecast.js')
 
 const app = express() //it takes no arguments
 
+//so we provide the value for port number, and if we are not running the application on heroku then it fails.
+//Hence we provide with a default fall back value i.e. 3000 here.
+const port = process.env.PORT || 3000  //env is environment variable set by heroku
+
+
 // now we configure our server by using various methods provided on the application itself.
 
 //let's say we have a domain app.com - we'll probably show them the home page
@@ -182,6 +187,10 @@ app.get('*', (req, res) => {
 // the listen method also has an optional argument of a callback function. That callback function will run when the server is up and running.
 // the process of starting up a server is a asynchronous process. Tho it almost happens instantly. 
 
-app.listen(3000, ()=>{
+/*app.listen(3000, ()=>{
     console.log('Server is up on port 3000.')
+})*/
+
+app.listen(port, ()=>{
+    console.log('Server is up on port '+ port)
 })
